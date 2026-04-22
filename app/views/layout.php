@@ -9,19 +9,34 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header qui change selon le rôle de l'utilisateur -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <!-- Nom de l'application à gauche -->
             <a class="navbar-brand" href="/klaxon/public/index.php">Touche Pas Au Klaxon</a>
             <div class="ms-auto">
-                <!-- Bouton connexion à droite pour les visiteurs -->
-                <a href="/klaxon/public/index.php/login" class="btn btn-light">Se connecter</a>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <?php if ($_SESSION['user']['est_admin']): ?>
+                        <!-- Menu admin -->
+                        <a href="/klaxon/public/index.php/admin/users" class="btn btn-light me-2">Utilisateurs</a>
+                        <a href="/klaxon/public/index.php/admin/agences" class="btn btn-light me-2">Agences</a>
+                        <a href="/klaxon/public/index.php/admin/trajets" class="btn btn-light me-2">Trajets</a>
+                    <?php else: ?>
+                        <!-- Menu employé connecté -->
+                        <a href="/klaxon/public/index.php/trajets/create" class="btn btn-light me-2">Proposer un trajet</a>
+                        <span class="text-white me-2"><?= htmlspecialchars($_SESSION['user']['prenom'] . ' ' . $_SESSION['user']['nom']) ?></span>
+                    <?php endif; ?>
+                    <!-- Bouton déconnexion pour tous les utilisateurs connectés -->
+                    <a href="/klaxon/public/index.php/logout" class="btn btn-danger">Se déconnecter</a>
+                <?php else: ?>
+                    <!-- Visiteur non connecté -->
+                    <a href="/klaxon/public/index.php/login" class="btn btn-light">Se connecter</a>
+                <?php endif; ?>
             </div>
         </div>
     </nav>
 
-    <!-- Contenu de la page, sera remplacé par chaque vue -->
+    <!-- Contenu de la page -->
     <main class="container mt-4">
         <?= $content ?>
     </main>
