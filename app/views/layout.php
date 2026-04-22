@@ -1,3 +1,7 @@
+<?php
+/** @var string $content */
+?>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

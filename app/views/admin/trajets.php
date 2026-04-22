@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php
+/** @var array<int, array<string, mixed>> $trajets */
+ob_start();
+?>
 
 <h1 class="mb-4">Gestion des trajets</h1>
 

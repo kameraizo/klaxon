@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php
+/** @var array<int, array<string, mixed>> $agences */
+ob_start();
+?>
 
 <div class="row justify-content-center">
     <div class="col-md-6">

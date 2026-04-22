@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php
+/** @var array<int, array<string, mixed>> $agences */
+ob_start();
+?>
 
 <h1 class="mb-4">Gestion des agences</h1>
 

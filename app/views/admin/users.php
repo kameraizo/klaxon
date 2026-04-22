@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php
+/** @var array<int, array<string, mixed>> $users */
+ob_start();
+?>
 
 <h1 class="mb-4">Liste des utilisateurs</h1>
 
