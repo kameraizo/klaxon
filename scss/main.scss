@@ -1,0 +1,11 @@
+// Variables de couleurs imposées par le brief
+// On utilise les variables Bootstrap pour faciliter les futurs projets
+$primary: #0074c7;
+$secondary: #00497c;
+$dark: #384050;
+$danger: #cd2c2e;
+$success: #82b864;
+$light: #f1f8fc;
+
+// On importe Bootstrap avec nos variables personnalisées
+@import "../node_modules/bootstrap/scss/bootstrap";
