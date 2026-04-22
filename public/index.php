@@ -28,6 +28,13 @@ $router->get('/trajets/create', 'TrajetController@create');
 $router->post('/login', 'AuthController@login');
 $router->post('/trajets/store', 'TrajetController@store');
 
+//modification trajet
+$router->get('/trajets/edit/:id', 'TrajetController@edit');
+$router->post('/trajets/update/:id', 'TrajetController@update');
+
+//suppression trajet
+$router->get('/trajets/delete/:id', 'TrajetController@delete');
+
 // Déconnexion
 $router->get('/logout', 'AuthController@logout');
 
