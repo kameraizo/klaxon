@@ -6,6 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../app/controllers/HomeController.php';
 require_once __DIR__ . '/../app/controllers/AuthController.php';
+require_once __DIR__ . '/../app/controllers/TrajetController.php';
 
 use Buki\Router\Router;
 
@@ -21,9 +22,11 @@ $router->get('/', 'HomeController@index');
 
 // Affiche le formulaire de connexion
 $router->get('/login', 'AuthController@loginForm');
+$router->get('/trajets/create', 'TrajetController@create');
 
 // Traite le formulaire de connexion (POST car on envoie des données)
 $router->post('/login', 'AuthController@login');
+$router->post('/trajets/store', 'TrajetController@store');
 
 // Déconnexion
 $router->get('/logout', 'AuthController@logout');

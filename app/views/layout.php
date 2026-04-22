@@ -38,6 +38,13 @@
 
     <!-- Contenu de la page -->
     <main class="container mt-4">
+        <!--affichage du message flash s'il existe -->
+        <?php if (isset($_SESSION['flash'])): ?>
+            <div class="alert alert-success">
+                <?= htmlspecialchars($_SESSION['flash']) ?>
+            </div>
+            <?php unset($_SESSION['flash']); ?>
+        <?php endif; ?>
         <?= $content ?>
     </main>
 
