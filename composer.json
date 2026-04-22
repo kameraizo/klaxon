@@ -1,0 +1,18 @@
+{
+    "name": "antoi/klaxon",
+    "description": "Application de covoiturage interne",
+    "autoload": {
+        "psr-4": {
+            "Antoi\\Klaxon\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kameraizo",
+            "email": "kameraizo69@gmail.com"
+        }
+    ],
+    "require": {
+        "izniburak/router": "^3.1"
+    }
+}
